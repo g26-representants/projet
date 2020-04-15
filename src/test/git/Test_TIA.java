@@ -4,7 +4,7 @@ public class Test_TIA {
 	
 	
 	public void bonjour() {
-		System.out.println( "Bonjoour" );
+		System.out.println( "Malcolm X" );
 	}
 	
 	
