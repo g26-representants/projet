@@ -4,13 +4,11 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.view.application.ControllerAdmin1">
    <children>
       <Pane layoutY="-15.0" prefHeight="529.0" prefWidth="606.0">
          <children>
@@ -27,10 +25,9 @@
                   <Font size="19.0" />
                </font>
             </Label>
-            <ListView layoutX="56.0" layoutY="225.0" prefHeight="228.0" prefWidth="362.0" />
-            <Slider layoutX="430.0" layoutY="228.0" orientation="VERTICAL" prefHeight="222.0" prefWidth="14.0" />
-            <Button layoutX="357.0" layoutY="486.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="SUPPRIMER" />
-            <Button layoutX="471.0" layoutY="486.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="OUVRIR" />
+            <ListView layoutX="56.0" layoutY="225.0" prefHeight="228.0" prefWidth="477.0" />
+            <Button fx:id="Supprimer" layoutX="357.0" layoutY="486.0" mnemonicParsing="false" onAction="#Supprimer" prefHeight="25.0" prefWidth="87.0" text="SUPPRIMER" />
+            <Button fx:id="Ouvrir" layoutX="471.0" layoutY="486.0" mnemonicParsing="false" onAction="#Ouvrir" prefHeight="25.0" prefWidth="61.0" text="OUVRIR" />
          </children>
       </Pane>
    </children>
