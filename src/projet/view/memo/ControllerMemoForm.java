@@ -52,6 +52,8 @@ public class ControllerMemoForm {
 	@FXML
 	private ToggleGroup		toggleGroupStatut;
 	@FXML
+	private ToggleGroup		toggleGroupStatt;
+	@FXML
 	private TextField		textFieldEffectif;
 	@FXML
 	private TextField		textFieldBudget;
