@@ -100,3 +100,10 @@ INSERT INTO service ( idservice, nom, anneecreation, flagsiege ) VALUES
 
 ALTER TABLE service ALTER COLUMN idservice RESTART WITH 5;
 
+INSERT INTO boldair (idboldair, dateboldair, ravitaillement, parking, dossards, buvette, repas, signaleur) VALUES
+	(1, '29/06/2017', 8, 8, 8, 9, 4, 5),
+	(2, '29/06/2018', 8, 8, 8, 9, 4, 5),
+	(3, '29/06/2019', 8, 8, 8, 9, 4, 5);
+	
+ALTER TABLE boldair ALTER COLUMN idboldair RESTART WITH 8;
+
