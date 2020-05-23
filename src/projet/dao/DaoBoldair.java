@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 
 import jfox.dao.jdbc.UtilJdbc;
 import projet.data.Boldair;
+import projet.data.Service;
 
 public class DaoBoldair {
 
@@ -139,6 +140,32 @@ public class DaoBoldair {
 		boldair.setRepas( rs.getObject( "repas", Integer.class ) );
 		boldair.setSignaleur( rs.getObject( "signaleur", Integer.class ) );
 		return boldair;
+	}
+
+	public List<Boldair> listerTout() {
+
+		Connection			cn 		= null;
+		PreparedStatement	stmt 	= null;
+		ResultSet 			rs		= null;
+		String				sql;
+
+		try {
+			cn = dataSource.getConnection();
+			sql = "SELECT * FROM boldair ORDER BY date";
+			stmt = cn.prepareStatement( sql );
+			rs = stmt.executeQuery();
+
+			List<Boldair> boldair = new LinkedList<>();
+			while (rs.next()) {
+				boldair.add( construireBoldair( rs ) );
+			}
+			return boldair;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			UtilJdbc.close( rs, stmt, cn );
+		}
 	}
 	
 	
