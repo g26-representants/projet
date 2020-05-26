@@ -30,6 +30,8 @@ public enum EnumView implements IEnumView {
 	Vue2			( "application/ViewAdmin2.fxml" ),
 	Vue3			( "application/ViewAdmin3.fxml" ),
 	Accueil			("application/ViewAdmin1.fxml"),
+	InscriptionListe			( "inscription/ViewInscriptionListe.fxml" ),
+	InscriptionForm			( "inscription/ViewInscriptionForm.fxml" ),
 	;
 
 	
