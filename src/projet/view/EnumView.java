@@ -32,6 +32,9 @@ public enum EnumView implements IEnumView {
 	Accueil			("application/ViewAdmin1.fxml"),
 	InscriptionListe			( "inscription/ViewInscriptionListe.fxml" ),
 	InscriptionForm			( "inscription/ViewInscriptionForm.fxml" ),
+	BoldairListe			( "boldair/ViewBoldairListe.fxml" ),
+	BoldairForm			( "boldair/ViewBoldairForm.fxml" ),
+	
 	;
 
 	

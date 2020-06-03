@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import jfox.javafx.view.IManagerGui;
+import jfox.start.ManagerGui;
 import projet.view.EnumView;
 
 
