@@ -12,6 +12,7 @@ import javafx.beans.property.StringProperty;
 
 public class Boldair {
 	private final Property<Integer>		id				= new SimpleObjectProperty<>();
+	private final Property<Integer>		anneeBoldair	= new SimpleObjectProperty<>();
 	private final Property<Integer>		ravitaillement	= new SimpleObjectProperty<>();
 	private final Property<Integer>		parking	= new SimpleObjectProperty<>();
 	private final Property<Integer>		dossards	= new SimpleObjectProperty<>();
@@ -102,6 +103,18 @@ public class Boldair {
 	
 	public final void setSignaleur(final Integer signaleur) {
 		this.signaleurProperty().setValue(signaleur);
+	}
+	
+	public final Property<Integer> anneeBoldairProperty() {
+		return this.anneeBoldair;
+	}
+	
+	public final Integer getAnneeBoldair() {
+		return this.anneeBoldairProperty().getValue();
+	}
+	
+	public final void setAnneeBoldair(final Integer anneeBoldair) {
+		this.anneeBoldairProperty().setValue(anneeBoldair);
 	}
 	
 	// hashCode() & equals()

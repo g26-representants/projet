@@ -33,14 +33,15 @@ public class DaoBoldair {
 		
 		try {
 			cn = dataSource.getConnection();
-			sql = "INSERT INTO boldair ( ravitaillement, parking, dossards, buvette, repas, signaleur ) VALUES( ?, ?, ?, ?, ?, ? ) ";
+			sql = "INSERT INTO boldair ( anneeBoldair,ravitaillement, parking, dossards, buvette, repas, signaleur ) VALUES( ?, ?, ?, ?, ?, ?, ? ) ";
 			stmt = cn.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS );
-			stmt.setObject( 1, boldair.getRavitaillement() );
-			stmt.setObject( 2, boldair.getParking() );
-			stmt.setObject( 3, boldair.getDossards() );
-			stmt.setObject( 4, boldair.getBuvette() );
-			stmt.setObject( 5, boldair.getRepas() );
-			stmt.setObject( 6, boldair.getSignaleur() );
+			stmt.setObject( 1, boldair.getAnneeBoldair() );
+			stmt.setObject( 2, boldair.getRavitaillement() );
+			stmt.setObject( 3, boldair.getParking() );
+			stmt.setObject( 4, boldair.getDossards() );
+			stmt.setObject( 5, boldair.getBuvette() );
+			stmt.setObject( 6, boldair.getRepas() );
+			stmt.setObject( 7, boldair.getSignaleur() );
 			stmt.executeUpdate();
 
 			// Récupère l'identifiant généré par le SGBD
@@ -64,15 +65,16 @@ public class DaoBoldair {
 
 		try {
 			cn = dataSource.getConnection();
-			sql = "UPDATE boldair SET ravitaillement = ?, parking = ?, dossards = ?, buvette = ?, repas = ?, signaleur = ? = ? WHERE idboldair =  ?";
+			sql = "UPDATE boldair SET anneeBoldair = ?, ravitaillement = ?, parking = ?, dossards = ?, buvette = ?, repas = ?, signaleur = ?  WHERE idboldair =  ?";
 			stmt = cn.prepareStatement( sql );
-			stmt.setObject( 1, boldair.getRavitaillement() );
-			stmt.setObject( 2, boldair.getParking() );
-			stmt.setObject( 3, boldair.getDossards() );
-			stmt.setObject( 4, boldair.getBuvette() );
-			stmt.setObject( 5, boldair.getRepas() );
-			stmt.setObject( 6, boldair.getSignaleur() );
-			stmt.setObject( 7, boldair.getId() );
+			stmt.setObject( 1, boldair.getAnneeBoldair() );
+			stmt.setObject( 2, boldair.getRavitaillement() );
+			stmt.setObject( 3, boldair.getParking() );
+			stmt.setObject( 4, boldair.getDossards() );
+			stmt.setObject( 5, boldair.getBuvette() );
+			stmt.setObject( 6, boldair.getRepas() );
+			stmt.setObject( 7, boldair.getSignaleur() );
+			stmt.setObject( 8, boldair.getId() );
 			stmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -133,6 +135,7 @@ public class DaoBoldair {
 	private Boldair construireBoldair( ResultSet rs ) throws SQLException {
 		Boldair boldair = new Boldair();
 		boldair.setId( rs.getObject( "idboldair", Integer.class ) );
+		boldair.setAnneeBoldair( rs.getObject( "anneeBoldair", Integer.class ) );
 		boldair.setRavitaillement( rs.getObject( "ravitaillement", Integer.class ) );
 		boldair.setParking( rs.getObject( "parking", Integer.class ) );
 		boldair.setDossards( rs.getObject( "dossards", Integer.class ) );
@@ -151,7 +154,7 @@ public class DaoBoldair {
 
 		try {
 			cn = dataSource.getConnection();
-			sql = "SELECT * FROM boldair ORDER BY date";
+			sql = "SELECT * FROM boldair ORDER BY anneeBoldair";
 			stmt = cn.prepareStatement( sql );
 			rs = stmt.executeQuery();
 

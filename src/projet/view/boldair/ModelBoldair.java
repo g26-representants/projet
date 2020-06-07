@@ -64,6 +64,13 @@ public class ModelBoldair  {
 		StringBuilder message = new StringBuilder();
 
 
+		if( courant.getAnneeBoldair() != null ) {
+			if ( courant.getAnneeBoldair() < 1900  
+					|| courant.getAnneeBoldair() > 2100 ) {
+				message.append( "\nValeur incorrecte pour l'année de création." );
+			}
+		}
+		
 		if( courant.getRavitaillement() != null ) {
 			if ( courant.getRavitaillement() < 0  
 					|| courant.getRavitaillement() > 400 ) {

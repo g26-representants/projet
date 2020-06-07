@@ -25,6 +25,7 @@ public enum EnumView implements IEnumView {
 	TestDaoCategorie	( "test/ViewTestDaoCategorie.fxml" ),
 	TestDaoMemo			( "test/ViewTestDaoMemo.fxml" ),
 	TestDaoService		( "test/ViewTestDaoService.fxml" ),
+	TestDaoBoldair		( "test/ViewTestDaoBoldair.fxml" ),
 	EtatPersonnesParCateogire1	( "personne/ViewEtatPersonnesParCategorie1.fxml" ),
 	EtatPersonnesParCateogire2	( "personne/ViewEtatPersonnesParCategorie2.fxml" ),
 	Vue2			( "application/ViewAdmin2.fxml" ),
@@ -33,7 +34,8 @@ public enum EnumView implements IEnumView {
 	InscriptionListe			( "inscription/ViewInscriptionListe.fxml" ),
 	InscriptionForm			( "inscription/ViewInscriptionForm.fxml" ),
 	BoldairListe			( "boldair/ViewBoldairListe.fxml" ),
-	BoldairForm			( "boldair/ViewBoldairForm.fxml" ),
+	BoldairForm			( "boldair/ViewBoldairForm.fxml" ), 
+	
 	
 	;
 

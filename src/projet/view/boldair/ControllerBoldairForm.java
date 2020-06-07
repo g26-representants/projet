@@ -20,6 +20,8 @@ public class ControllerBoldairForm {
 	@FXML
 	private TextField		textFieldId;
 	@FXML
+	private TextField		textFieldAnneeBoldair;
+	@FXML
 	private TextField		textFieldRavitaillement;
 	@FXML
 	private TextField		textFieldParking;
@@ -52,6 +54,9 @@ public class ControllerBoldairForm {
 
 		textFieldId.textProperty().bindBidirectional( courant.idProperty(), new IntegerStringConverter()  );
 
+		textFieldAnneeBoldair.textProperty().bindBidirectional( courant.anneeBoldairProperty(), new ConverterStringInteger( "###0" ) );
+		textFieldAnneeBoldair.focusedProperty().addListener( new ListenerFocusValidation( courant.anneeBoldairProperty()  ));
+		
 		
 		textFieldRavitaillement.textProperty().bindBidirectional( courant.ravitaillementProperty(), new ConverterStringInteger( "###0" ) );
 		textFieldRavitaillement.focusedProperty().addListener( new ListenerFocusValidation( courant.ravitaillementProperty()  ));

@@ -23,6 +23,7 @@ public class MenuBarAppli extends MenuBar {
 	private Menu	menuDonnees;
 	private Menu	menuEtats;
 	private Menu	menuTests;
+	private Menu    menuBoldair;
 	
 	private MenuItem itemDeconnecter;
 
@@ -48,12 +49,12 @@ public class MenuBarAppli extends MenuBar {
 		MenuItem item;
 		
 		
-		// Manu Système
+		// Manu Systï¿½me
 		
-		menu =  new Menu( "Système" );;
+		menu =  new Menu( "Systï¿½me" );;
 		this.getMenus().add(menu);
 		
-		item = new MenuItem( "Se déconnecter" );
+		item = new MenuItem( "Se dï¿½connecter" );
 		item.setOnAction(  (e) -> managerGui.showView( EnumView.Connexion )  );
 		menu.getItems().add( item );
 		itemDeconnecter = item;
@@ -63,13 +64,13 @@ public class MenuBarAppli extends MenuBar {
 		menu.getItems().add( item );
 
 		
-		// Manu Données
+		// Manu Donnï¿½es
 		
-		menu =  new Menu( "Données" );;
+		menu =  new Menu( "Donnï¿½es" );;
 		this.getMenus().add(menu);
 		menuDonnees = menu;
 		
-		item = new MenuItem( "Mémos" );
+		item = new MenuItem( "Mï¿½mos" );
 		item.setOnAction(  (e) -> managerGui.showView( EnumView.MemoListe )  );
 		menu.getItems().add( item );
 		
@@ -85,7 +86,7 @@ public class MenuBarAppli extends MenuBar {
 		item.setOnAction(  (e) -> managerGui.showView( EnumView.PersonneListe )  );
 		menu.getItems().add( item );
 		
-		item = new MenuItem( "Catégories" );
+		item = new MenuItem( "Catï¿½gories" );
 		item.setOnAction(  (e) -> managerGui.showView( EnumView.CategorieListe )  );
 		menu.getItems().add( item );
 		itemCategories = item;
@@ -102,12 +103,12 @@ public class MenuBarAppli extends MenuBar {
 		this.getMenus().add(menu);
 		menuEtats = menu;
 		
-		item = new MenuItem( "Personnes par catégorie v1" );
+		item = new MenuItem( "Personnes par catï¿½gorie v1" );
 		item.setOnAction(  (e) ->  
 				managerGui.showDialog( EnumView.EtatPersonnesParCateogire1 ) );
 		menu.getItems().add( item );
 		
-		item = new MenuItem( "Personnes par catégorie v2" );
+		item = new MenuItem( "Personnes par catï¿½gorie v2" );
 		item.setOnAction(  (e) ->  
 				managerGui.showDialog( EnumView.EtatPersonnesParCateogire2 ) );
 		menu.getItems().add( item );
@@ -122,11 +123,17 @@ public class MenuBarAppli extends MenuBar {
 				managerReport.showViewer( EnumReport.PersonnesListeSimple, null ) );
 		menu.getItems().add( item );
 		
-		item = new MenuItem( "Annuaire téléphonique" );
+		item = new MenuItem( "Annuaire tï¿½lï¿½phonique" );
 		item.setOnAction(  (e) ->  
 //				managerReport.print( EnumReport.AnnuaireTelephone, null ) );
 				managerReport.showViewer( EnumReport.AnnuaireTelephone, null ) );
 		menu.getItems().add( item );
+		
+		item = new MenuItem( "Liste bol d'air" );
+		item.setOnAction(  (e) ->  
+				managerGui.showDialog( EnumView.BoldairListe ) );
+		menu.getItems().add( item );
+		
 
 		
 		// Menu Tests
@@ -134,6 +141,8 @@ public class MenuBarAppli extends MenuBar {
 		menu =  new Menu( "Tests" );;
 		this.getMenus().add(menu);
 		menuTests = menu;
+		
+
 		
 		item = new MenuItem( "DaoCategorie" );
 		item.setOnAction(  (e) -> managerGui.showView( EnumView.TestDaoCategorie )  );
@@ -150,12 +159,20 @@ public class MenuBarAppli extends MenuBar {
 		item = new MenuItem( "DaoService" );
 		item.setOnAction(  (e) -> managerGui.showView( EnumView.TestDaoService )  );
 		menu.getItems().add( item );
+		
+		item = new MenuItem( "DaoBoldair" );
+		item.setOnAction(  (e) -> managerGui.showView( EnumView.TestDaoBoldair )  );
+		menu.getItems().add( item );
+
+
+		
+
 
 
 		// Configuration initiale du menu
 		configurerMenu( modelConnexion.getCompteActif() );
 
-		// Le changement du compte connecté modifie automatiquement le menu
+		// Le changement du compte connectï¿½ modifie automatiquement le menu
 		modelConnexion.compteActifProperty().addListener( (obs) -> {
 					Platform.runLater( () -> configurerMenu( modelConnexion.getCompteActif() ) );
 				}
@@ -164,7 +181,7 @@ public class MenuBarAppli extends MenuBar {
 	}
 
 	
-	// Méthodes auxiliaires
+	// Mï¿½thodes auxiliaires
 	
 	private void configurerMenu( Compte compteActif  ) {
 
